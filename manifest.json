@@ -1,25 +1,25 @@
 {
-    "manifest_version": 3,
-    "name": "Udemy Video Control",
-    "version": "1.0",
-    "description": "Controls Udemy videos while taking notes in another tab.",
-    "permissions": [
-      "activeTab",
-      "scripting",
-      "tabs",
-      "clipboardWrite"
-    ],
-    "background": {
-      "service_worker": "background.js"
+  "manifest_version": 3,
+  "name": "Udemy Video Control",
+  "version": "1.0",
+  "description": "Controls Udemy videos while taking notes in another tab.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "clipboardWrite"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.udemy.com/*"],
+      "js": ["udemyContent.js"]
     },
-    "content_scripts": [
-      {
-        "matches": ["*://*.udemy.com/*"],
-        "js": ["udemyContent.js"]
-      },
-      {
-        "matches": ["<all_urls>"],
-        "js": ["noteContent.js"]
-      }
-    ]
-  }  
+    {
+      "matches": ["<all_urls>"],
+      "js": ["noteContent.js"]
+    }
+  ]
+}
