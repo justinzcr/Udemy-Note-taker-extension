@@ -22,5 +22,6 @@
       "matches": ["<all_urls>"],
       "js": ["noteContent.js"]
     }
-  ]
+  ],
+  "host_permissions": ["https://*"]
 }
