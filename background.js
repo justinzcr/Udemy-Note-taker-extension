@@ -2,7 +2,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   console.log("Message received in background:", message);
 
   if (message.action === "pauseVideo") {
-    chrome.tabs.query({ url: "*://*.udemy.com/*" }, (tabs) => {
+    chrome.tabs.query({ url: "https://www.udemy.com/*" }, (tabs) => {
       console.log("Pausing video in Udemy tabs:", tabs);
       tabs.forEach((tab) => {
         chrome.scripting.executeScript({
@@ -16,7 +16,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
       });
     });
   } else if (message.action === "playVideo") {
-    chrome.tabs.query({ url: "*://*.udemy.com/*" }, (tabs) => {
+    chrome.tabs.query({ url: "https://www.udemy.com/*" }, (tabs) => {
       console.log("Playing video in Udemy tabs:", tabs);
       tabs.forEach((tab) => {
         chrome.scripting.executeScript({

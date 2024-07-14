@@ -8,14 +8,14 @@
     "scripting",
     "tabs",
     "clipboardWrite",
-    "https://*.udemy.com/*"
+    "https://www.udemy.com/*"
   ],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["*://*.udemy.com/*"],
+      "matches": ["https://www.udemy.com/*"],
       "js": ["udemyContent.js"]
     },
     {
